@@ -1,0 +1,46 @@
+---
+const { lang = "ro" } = Astro.props;
+const isRO = lang === "ro";
+---
+
+<footer class="border-t border-white/10">
+  <div class="mx-auto max-w-6xl px-6 py-10">
+    <div class="grid gap-6 md:grid-cols-3">
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/15">
+            <span class="text-sm font-semibold tracking-tight">N</span>
+          </span>
+          <div>
+            <p class="text-sm font-semibold">NokuLabs</p>
+            <p class="text-xs text-white/50">Architecture-first delivery</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-sm text-white/60">
+        <p class="font-semibold text-white/80">{isRO ? "Capabilități" : "Capabilities"}</p>
+        <ul class="mt-3 space-y-2">
+          <li>• Web build + maintenance</li>
+          <li>• Software development</li>
+          <li>• Technical consulting</li>
+        </ul>
+      </div>
+
+      <div class="text-sm text-white/60">
+        <p class="font-semibold text-white/80">{isRO ? "Contact" : "Contact"}</p>
+        <p class="mt-3">
+          <a href="mailto:contact@nokulabs.com?subject=NokuLabs%20Inquiry">contact@nokulabs.com</a>
+        </p>
+        <p class="mt-2 text-xs text-white/40">
+          {isRO ? "Răspund cu plan + estimare." : "Reply includes plan + estimate."}
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/40 md:flex-row md:items-center md:justify-between">
+      <p>© {new Date().getFullYear()} NokuLabs. All rights reserved.</p>
+      <p>Security-minded • Audit-ready • Ops-first</p>
+    </div>
+  </div>
+</footer>

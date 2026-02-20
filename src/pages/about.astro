@@ -1,0 +1,20 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Card from "../components/Card.astro";
+import Section from "../components/Section.astro";
+---
+
+<SiteLayout lang="ro" title="Despre — NokuLabs" description="Arhitectură întâi. Securitate by default.">
+  <h1 class="text-4xl font-semibold tracking-tight">Despre</h1>
+  <p class="mt-4 max-w-2xl text-white/70">
+    NokuLabs este orientat pe sisteme care rezistă în timp: arhitectură curată, securitate și operare simplă.
+  </p>
+
+  <Section kicker="principii" title="Standardul nostru">
+    <div class="grid gap-6 md:grid-cols-3">
+      <Card title="Architecture-first">Structură înainte de UI. Separare clară a responsabilităților.</Card>
+      <Card title="Security-minded">Acces, audit, date, threat model. Default-uri sigure.</Card>
+      <Card title="Ops clarity">Sistem ușor de folosit, întreținut și verificat.</Card>
+    </div>
+  </Section>
+</SiteLayout>

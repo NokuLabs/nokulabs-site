@@ -1,0 +1,172 @@
+---
+const { lang = "ro" } = Astro.props;
+
+const isRO = lang === "ro";
+const base = isRO ? "" : "/en";
+
+const nav = [
+  { href: `${base}/services`, label: isRO ? "Servicii" : "Services" },
+  { href: `${base}/case-studies/certdsp`, label: isRO ? "Studiu de caz" : "Case Study" },
+  { href: `${base}/about`, label: isRO ? "Despre" : "About" },
+  { href: `${base}/contact`, label: isRO ? "Contact" : "Contact" },
+];
+
+const switchHref = isRO ? "/en" : "/";
+const switchLabel = isRO ? "EN" : "RO";
+---
+
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0b0f17]/70 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <!-- Brand -->
+    <a href={base || "/"} class="flex items-center gap-3">
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/15">
+        <span class="text-sm font-semibold tracking-tight">N</span>
+      </span>
+      <span class="text-sm font-semibold tracking-tight">NokuLabs</span>
+      <span class="ml-2 hidden rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[10px] text-white/60 md:inline">
+        architecture-first
+      </span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden items-center gap-6 text-sm text-white/70 md:flex">
+      {nav.map((i) => (
+        <a class="hover:text-white" href={i.href}>{i.label}</a>
+      ))}
+    </nav>
+
+    <!-- Actions (desktop) -->
+    <div class="hidden items-center gap-3 md:flex">
+      <a
+        href={switchHref}
+        class="rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-white/80 hover:bg-white/10"
+        aria-label="Switch language"
+      >
+        {switchLabel}
+      </a>
+      <a
+        href={`${base}/contact`}
+        class="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-white/90 transition"
+      >
+        {isRO ? "Cere ofertă" : "Request a quote"}
+      </a>
+    </div>
+
+    <!-- Mobile menu button -->
+    <button
+      id="nl-menu-open"
+      class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white/90 hover:bg-white/10"
+      aria-label="Open menu"
+      aria-controls="nl-mobile-menu"
+      aria-expanded="false"
+      type="button"
+    >
+      <!-- Hamburger icon -->
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="opacity-90">
+        <path d="M4 7H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu overlay -->
+  <div id="nl-mobile-menu" class="hidden md:hidden">
+    <div
+      id="nl-menu-backdrop"
+      class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
+      aria-hidden="true"
+    ></div>
+
+    <div class="fixed right-0 top-0 z-50 h-full w-[86%] max-w-sm border-l border-white/10 bg-[#0b0f17] p-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/15">
+            <span class="text-sm font-semibold tracking-tight">N</span>
+          </span>
+          <div>
+            <p class="text-sm font-semibold">NokuLabs</p>
+            <p class="text-xs text-white/50">architecture-first</p>
+          </div>
+        </div>
+
+        <button
+          id="nl-menu-close"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white/90 hover:bg-white/10"
+          aria-label="Close menu"
+          type="button"
+        >
+          <!-- X icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="opacity-90">
+            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="mt-6 space-y-2">
+        {nav.map((i) => (
+          <a
+            href={i.href}
+            class="block rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/85 hover:bg-white/10 hover:border-white/20"
+            data-nl-link
+          >
+            {i.label}
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-6 flex items-center gap-3">
+        <a
+          href={switchHref}
+          class="inline-flex flex-1 items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-white/85 hover:bg-white/10"
+        >
+          {switchLabel}
+        </a>
+
+        <a
+          href={`${base}/contact`}
+          class="inline-flex flex-1 items-center justify-center rounded-xl bg-white px-4 py-3 text-sm font-semibold text-black hover:bg-white/90 transition"
+        >
+          {isRO ? "Cere ofertă" : "Request a quote"}
+        </a>
+      </div>
+
+      <p class="mt-6 text-xs text-white/45">
+        {isRO ? "Operare simplă. Securitate by default." : "Simple ops. Security by default."}
+      </p>
+    </div>
+  </div>
+
+  <script is:inline>
+    (() => {
+      const openBtn = document.getElementById("nl-menu-open");
+      const closeBtn = document.getElementById("nl-menu-close");
+      const menu = document.getElementById("nl-mobile-menu");
+      const backdrop = document.getElementById("nl-menu-backdrop");
+
+      if (!openBtn || !closeBtn || !menu || !backdrop) return;
+
+      const setOpen = (isOpen) => {
+        menu.classList.toggle("hidden", !isOpen);
+        openBtn.setAttribute("aria-expanded", String(isOpen));
+        document.body.style.overflow = isOpen ? "hidden" : "";
+      };
+
+      const onKeyDown = (e) => {
+        if (e.key === "Escape") setOpen(false);
+      };
+
+      openBtn.addEventListener("click", () => setOpen(true));
+      closeBtn.addEventListener("click", () => setOpen(false));
+      backdrop.addEventListener("click", () => setOpen(false));
+
+      // Close when clicking a nav link
+      menu.querySelectorAll("[data-nl-link]").forEach((a) => {
+        a.addEventListener("click", () => setOpen(false));
+      });
+
+      document.addEventListener("keydown", onKeyDown);
+    })();
+  </script>
+</header>

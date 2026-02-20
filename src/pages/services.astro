@@ -1,0 +1,26 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+---
+
+<SiteLayout lang="ro" title="Servicii — NokuLabs" description="Site-uri premium, software, consultanță.">
+  <h1 class="text-4xl font-semibold tracking-tight">Servicii</h1>
+  <p class="mt-4 max-w-2xl text-white/70">
+    Delivery premium, orientat pe performanță, securitate și mentenabilitate. Clar, auditabil, fără improvizație.
+  </p>
+
+  <Section kicker="ofertă" title="Pachete">
+    <div class="grid gap-6 md:grid-cols-3">
+      <Card title="Website build" badge="premium">
+        Site de prezentare high-end, design dark enterprise, deploy Cloudflare Pages, SEO baseline, analytics.
+      </Card>
+      <Card title="Maintenance" badge="monthly">
+        Update-uri, optimizări, conținut, uptime, hardening, monitorizare. Contract simplu, SLA clar.
+      </Card>
+      <Card title="Software + tooling" badge="ops-first">
+        Aplicații desktop / interne: RBAC, audit log, PDF pipeline, arhivă, căutare, export.
+      </Card>
+    </div>
+  </Section>
+</SiteLayout>

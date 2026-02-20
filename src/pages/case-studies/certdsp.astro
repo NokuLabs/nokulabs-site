@@ -1,0 +1,32 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import Card from "../../components/Card.astro";
+import Section from "../../components/Section.astro";
+---
+
+<SiteLayout lang="ro" title="CertDSP — Studiu de caz | NokuLabs" description="Offline-first, RBAC, audit log, PDF archival.">
+  <p class="text-xs uppercase tracking-[0.18em] text-white/45">studiu de caz</p>
+  <h1 class="mt-3 text-4xl font-semibold tracking-tight">CertDSP</h1>
+  <p class="mt-4 max-w-2xl text-white/70">
+    Sistem desktop offline-first pentru emitere, căutare și arhivare certificate, cu RBAC și audit log imuabil.
+  </p>
+
+  <Section kicker="constrângeri" title="Realitatea din teren">
+    <div class="grid gap-6 md:grid-cols-2">
+      <Card title="Offline-first" badge="single PC">
+        Fără dependențe externe. Date locale. Flux predictibil.
+      </Card>
+      <Card title="Audit-ready" badge="traceability">
+        Acțiuni logate: create/view/search/export/print. Trasabilitate end-to-end.
+      </Card>
+    </div>
+  </Section>
+
+  <Section kicker="livrat" title="Capabilități cheie">
+    <div class="grid gap-6 md:grid-cols-3">
+      <Card title="RBAC">Admin / Operator. Acces controlat și responsabilități clare.</Card>
+      <Card title="SQLite + indexare">Căutare rapidă, paginare, integritate.</Card>
+      <Card title="Template → PDF → Archive">Merge fiabil din docx, export PDF, arhivare locală.</Card>
+    </div>
+  </Section>
+</SiteLayout>

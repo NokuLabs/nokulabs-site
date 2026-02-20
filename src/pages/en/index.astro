@@ -1,0 +1,129 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import Section from "../../components/Section.astro";
+import Card from "../../components/Card.astro";
+---
+
+<SiteLayout
+  lang="en"
+  title="NokuLabs — Architecture-first delivery"
+  description="Premium web systems, software, and consulting — security-minded, audit-ready, ops-first."
+>
+  <section class="glow overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-10">
+    <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">
+      <span class="h-1.5 w-1.5 rounded-full bg-emerald-300"></span>
+      Now building: CertDSP (offline-first, audit-ready)
+    </p>
+
+    <h1 class="mt-6 text-balance text-4xl font-semibold tracking-tight md:text-6xl">
+      We build systems that last.
+      <span class="block text-white/80">
+        Architecture before aesthetics. Security before speed.
+      </span>
+    </h1>
+
+    <p class="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-white/70 md:text-lg">
+      Premium websites, internal applications, and technical consulting — designed for reality: constraints, audits,
+      operations, maintenance. No improvisation. No lock-in.
+    </p>
+
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <a
+        href="/en/contact"
+        class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-black hover:bg-white/90 transition"
+      >
+        Request a quote
+      </a>
+      <a
+        href="/en/case-studies/certdsp"
+        class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white/90 hover:bg-white/10 transition"
+      >
+        View case study: CertDSP
+      </a>
+    </div>
+
+    <div class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/55">
+      <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Offline-first</span>
+      <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Audit-ready</span>
+      <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Cloudflare-ready</span>
+      <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">GDPR-aware</span>
+      <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Zero vendor lock-in</span>
+    </div>
+  </section>
+
+  <Section kicker="capabilities" title="What we deliver">
+    <div class="grid gap-6 md:grid-cols-3">
+      <Card title="Premium web systems" badge="Cloudflare-ready">
+        Fast, secure, controllable web systems.
+        <div class="mt-3 text-white/60">
+          No fragile CMS. No chaotic plugins. Clean SEO, real performance, predictable maintenance.
+        </div>
+      </Card>
+
+      <Card title="Software & tooling" badge=".NET / Desktop">
+        Internal applications built for operators.
+        <div class="mt-3 text-white/60">
+          CRUD, RBAC, immutable audit logs, PDF export, archival, search. No magic. No unnecessary dependencies.
+        </div>
+      </Card>
+
+      <Card title="Technical consulting" badge="Architecture-first">
+        Clear decisions, reduced risk, accelerated delivery.
+        <div class="mt-3 text-white/60">
+          Architecture, threat modeling, DB performance, delivery planning. I’ll tell you what to cut and what to ship.
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <Section kicker="protocol" title="How we work">
+    <div class="grid gap-6 md:grid-cols-3">
+      <Card title="1) Scope clarification" badge="signal > noise">
+        Objective, constraints, risk, definition of done. No scope creep. No feature soup.
+      </Card>
+
+      <Card title="2) Delivery plan" badge="predictable">
+        Tickets, milestones, acceptance criteria. Predictable delivery — not “we’ll see”.
+      </Card>
+
+      <Card title="3) Execution + maintenance" badge="ops-first">
+        Implementation, QA, hardening, support. Simple operations, low total cost, controlled risk.
+      </Card>
+    </div>
+  </Section>
+
+  <section class="mt-20">
+    <p class="text-xs uppercase tracking-[0.18em] text-white/45">positioning</p>
+    <h2 class="mt-3 text-2xl font-semibold text-white md:text-3xl">Why NokuLabs</h2>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="glow rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="text-sm font-semibold text-white">Architectural thinking</h3>
+        <p class="mt-3 text-sm text-white/70">
+          Every decision has a technical reason. No quick fixes that blow up during maintenance.
+        </p>
+      </div>
+
+      <div class="glow rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="text-sm font-semibold text-white">Full control</h3>
+        <p class="mt-3 text-sm text-white/70">
+          Your code. Your infrastructure. Zero lock-in, zero agency dependency.
+        </p>
+      </div>
+
+      <div class="glow rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="text-sm font-semibold text-white">Operability</h3>
+        <p class="mt-3 text-sm text-white/70">
+          Systems designed for real people using them daily. Clarity before features.
+        </p>
+      </div>
+
+      <div class="glow rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="text-sm font-semibold text-white">Disciplined delivery</h3>
+        <p class="mt-3 text-sm text-white/70">
+          Clear scope, milestones, acceptance criteria. No “maybe it works”.
+        </p>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Design tokens (dark enterprise / intel aesthetic) === */
+:root {
+  color-scheme: dark;
+  --bg: 11 15 23;       /* #0b0f17 */
+  --panel: 255 255 255; /* used with opacity */
+  --stroke: 255 255 255;
+  --txt: 255 255 255;
+  --muted: 180 190 205;
+  --accent: 110 231 183; /* emerald-ish */
+}
+
+html {
+  background: rgb(var(--bg));
+}
+
+body {
+  @apply min-h-screen antialiased;
+  color: rgb(var(--txt));
+  background: rgb(var(--bg));
+}
+
+/* Links: no default blue */
+a {
+  @apply text-white hover:opacity-90 transition;
+}
+
+/* Selection */
+::selection {
+  background: rgba(255,255,255,.18);
+}
+
+/* Subtle grid background helper */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 60% 55% at 50% 20%, black 40%, transparent 72%);
+}
+
+/* “intel glow” helper */
+.glow {
+  position: relative;
+}
+.glow:before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 24px;
+  background: radial-gradient(600px circle at 30% 0%, rgba(110,231,183,.18), transparent 45%),
+              radial-gradient(500px circle at 80% 30%, rgba(255,255,255,.08), transparent 45%);
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(0px);
+}
+
+/* Better type rhythm */
+h1,h2,h3 { letter-spacing: -0.02em; }

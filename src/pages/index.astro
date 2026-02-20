@@ -1,0 +1,134 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+---
+
+<SiteLayout
+  lang="ro"
+  title="NokuLabs — Architecture-first delivery"
+  description="Sisteme web, software și consultanță — security-minded, audit-ready, ops-first."
+>
+  <!-- HERO -->
+  <section class="glow overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-10">
+    <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">
+      <span class="h-1.5 w-1.5 rounded-full bg-emerald-300"></span>
+      Build activ: CertDSP (offline-first, audit-ready)
+    </p>
+
+    <h1 class="mt-6 text-balance text-4xl font-semibold tracking-tight md:text-6xl">
+      Construim sisteme care rezistă.
+      <span class="block text-white/80">
+        Arhitectură înainte de estetică. Securitate înainte de viteză.
+      </span>
+    </h1>
+
+    <p class="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-white/70 md:text-lg">
+      Site-uri high-end, aplicații și consultanță tehnică — construite pentru realitate: constrângeri, audit, operare,
+      mentenanță. Fără improvizație. Fără lock-in.
+    </p>
+
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-black hover:bg-white/90 transition"
+      >
+        Cere ofertă
+      </a>
+      <a
+        href="/case-studies/certdsp"
+        class="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white/90 hover:bg-white/10 transition"
+      >
+        Vezi studiul de caz: CertDSP
+      </a>
+    </div>
+
+    <!-- TRUST STRIP -->
+    <div class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/55">
+      <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Offline-first</span>
+      <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Audit-ready</span>
+      <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Cloudflare-ready</span>
+      <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">GDPR-aware</span>
+      <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">Zero vendor lock-in</span>
+    </div>
+  </section>
+
+  <!-- WHAT WE DELIVER -->
+  <Section kicker="capabilități" title="Ce livrăm">
+    <div class="grid gap-6 md:grid-cols-3">
+      <Card title="Sisteme web premium" badge="Cloudflare-ready">
+        Sisteme web rapide, sigure și controlabile.
+        <div class="mt-3 text-white/60">
+          Fără CMS-uri fragile. Fără plugin-uri haotice. SEO curat, performanță reală, mentenanță predictibilă.
+        </div>
+      </Card>
+
+      <Card title="Software & tooling" badge=".NET / Desktop">
+        Aplicații interne pentru operatori.
+        <div class="mt-3 text-white/60">
+          CRUD, RBAC, audit log, export PDF, arhivare, căutare. Fără magie. Fără dependențe inutile.
+        </div>
+      </Card>
+
+      <Card title="Consultanță tehnică" badge="Architecture-first">
+        Decizii clare, risc redus, livrare accelerată.
+        <div class="mt-3 text-white/60">
+          Arhitectură, threat modeling, DB performance, plan de livrare. Îți spun ce să tai și ce să ship-ui.
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- HOW WE WORK -->
+  <Section kicker="protocol" title="Cum lucrăm">
+    <div class="grid gap-6 md:grid-cols-3">
+      <Card title="1) Clarificare scope" badge="signal > noise">
+        Obiectiv, constrângeri, risc, definition of done. Fără scope creep. Fără „feature soup”.
+      </Card>
+
+      <Card title="2) Plan de livrare" badge="predictibil">
+        Ticket-uri, milestone-uri, acceptance criteria. Delivery predictibil, nu „vedem noi”.
+      </Card>
+
+      <Card title="3) Execuție + mentenanță" badge="ops-first">
+        Implementare, QA, hardening, suport. Operare simplă, cost total mic, risc controlat.
+      </Card>
+    </div>
+  </Section>
+
+  <!-- WHY NOKULABS -->
+  <section class="mt-20">
+    <p class="text-xs uppercase tracking-[0.18em] text-white/45">poziționare</p>
+    <h2 class="mt-3 text-2xl font-semibold text-white md:text-3xl">De ce NokuLabs</h2>
+
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="glow rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="text-sm font-semibold text-white">Gândire arhitecturală</h3>
+        <p class="mt-3 text-sm text-white/70">
+          Fiecare decizie are motiv tehnic. Nu „quick fixes” care explodează la mentenanță.
+        </p>
+      </div>
+
+      <div class="glow rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="text-sm font-semibold text-white">Control total</h3>
+        <p class="mt-3 text-sm text-white/70">
+          Codul este al tău. Infrastructura este a ta. Zero lock-in, zero dependență de agenții.
+        </p>
+      </div>
+
+      <div class="glow rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="text-sm font-semibold text-white">Operabilitate</h3>
+        <p class="mt-3 text-sm text-white/70">
+          Sisteme gândite pentru oameni reali care le folosesc zilnic. Clarity înainte de „features”.
+        </p>
+      </div>
+
+      <div class="glow rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="text-sm font-semibold text-white">Livrare disciplinată</h3>
+        <p class="mt-3 text-sm text-white/70">
+          Scope clar, milestone-uri, acceptanță. Nu „vedem noi”, nu „poate merge”.
+        </p>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

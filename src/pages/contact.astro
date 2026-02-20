@@ -1,0 +1,31 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Card from "../components/Card.astro";
+---
+
+<SiteLayout lang="ro" title="Contact — NokuLabs" description="Cere ofertă / consultanță tehnică.">
+  <h1 class="text-4xl font-semibold tracking-tight">Contact</h1>
+  <p class="mt-4 max-w-2xl text-white/70">
+    Trimite scope + constrângeri + deadline. Răspund cu plan de livrare și estimare.
+  </p>
+
+  <div class="mt-10 grid gap-6 md:grid-cols-2">
+    <Card title="Email direct" badge="rapid">
+      <p>Cel mai rapid canal.</p>
+      <a class="mt-4 inline-flex items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-white/90 transition"
+         href="mailto:contact@nokulabs.com?subject=NokuLabs%20—%20Cerere%20ofertă">
+        contact@nokulabs.com
+      </a>
+      <p class="mt-3 text-xs text-white/50">Schimbă email-ul când vrei (domeniul e al tău).</p>
+    </Card>
+
+    <Card title="Ce să incluzi" badge="checklist">
+      <ul class="space-y-2">
+        <li>• Ce vrei să construim?</li>
+        <li>• Deadline și constrângeri</li>
+        <li>• Stack curent (dacă există)</li>
+        <li>• Buget (opțional, dar accelerează tot)</li>
+      </ul>
+    </Card>
+  </div>
+</SiteLayout>
