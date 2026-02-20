@@ -1,6 +1,4 @@
-@'
 User-agent: *
 Allow: /
 
-Sitemap: https://nokulabs.com/sitemap.xml
-'@ | Set-Content -Encoding ASCII .\public\robots.txt
+Sitemap: https://nokulabs.com/sitemap-index.xml
