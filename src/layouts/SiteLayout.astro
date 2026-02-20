@@ -1,68 +1,61 @@
 ---
-import "../styles/global.css";
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
-
 const {
-  title = "NokuLabs",
-  description = "Architecture-first delivery, maintenance & consulting.",
+  title = "NokuLabs — architecture-first",
+  description = "Premium web systems, software & consulting — built for real-world constraints.",
   lang = "ro",
+  noIndex = false,
+  canonical,
+  ogImage = "/og.png",
 } = Astro.props;
 
-// canonical + OG image
 const site = "https://nokulabs.com";
-const canonical = new URL(Astro.url.pathname, site).toString();
-const ogImage = `${site}/og.png`;
+const pathname = Astro.url.pathname;
+
+// canonical implicit (dacă nu e dat din pagină)
+const canonicalUrl = canonical ?? new URL(pathname, site).toString();
+
+// OG image absolut
+const ogImageUrl = new URL(ogImage, site).toString();
 ---
 
 <!doctype html>
-<html lang={lang} class="dark">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0f17" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
 
-    <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#0b0f17" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    {noIndex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow" />}
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="NokuLabs" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
 
-    <!-- Twitter / X -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Icons / PWA -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Preconnect (optional, safe defaults) -->
+    <link rel="preconnect" href="https://static.cloudflareinsights.com" crossorigin />
   </head>
 
   <body>
-    <!-- Background grid -->
-    <div class="pointer-events-none fixed inset-0 -z-10 bg-grid opacity-[0.55]"></div>
-
-    <!-- Ambient glow -->
-    <div class="pointer-events-none fixed inset-0 -z-10">
-      <div class="absolute -top-32 left-1/2 h-[28rem] w-[44rem] -translate-x-1/2 rounded-full bg-white/10 blur-3xl opacity-50"></div>
-      <div class="absolute top-[18rem] right-[-10rem] h-[26rem] w-[26rem] rounded-full bg-emerald-300/10 blur-3xl opacity-60"></div>
-    </div>
-
-    <Nav lang={lang} />
-
-    <main class="mx-auto max-w-6xl px-6 py-14">
-      <slot />
-    </main>
-
-    <Footer lang={lang} />
+    <slot />
   </body>
 </html>
